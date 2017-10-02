@@ -9,6 +9,20 @@ public class WordPlay {
 		}
 		return false;
 	}
+	public String replaceVowels(String phrase, char ch)
+	{
+		String replacedPhrase = "";
+		for (char c : phrase.toCharArray() )
+		{
+			if(isVowel(c))
+			{
+				replacedPhrase += ch;
+			}
+			else
+				replacedPhrase +=c;
+		}
+		return replacedPhrase;
+	}
 	public void tester()
 	{
 		boolean flag = isVowel('F');
@@ -16,6 +30,9 @@ public class WordPlay {
 		
 		flag = isVowel('a');
 		System.out.println(flag);
+		
+		String s = replaceVowels("Hello World",'*');
+		System.out.println(s);
 	}
 	public static void main(String[] args)
 	{
